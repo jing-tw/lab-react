@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://cesiumjs.org/releases/1.81/Build/Cesium/Cesium.js"></script>
+<link href="https://cesiumjs.org/releases/1.81/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1YzA0MTNkMC0wZDI0LTRjZDctYjczMy02OGNkNTA4NzE4ZjYiLCJpZCI6MzY4NjQsImlhdCI6MTYyMDkwNDA2Mn0.URvVpyIHf7FAXCCgmcN362-z2u1rTrTH_2azm2OjbWs';
+    //const viewer = new Cesium.Viewer('cesiumContainer');
+
+    const viewer = new Cesium.Viewer('cesiumContainer', {
+      terrainProvider: Cesium.createWorldTerrain()
+    });
+    // Add Cesium OSM Buildings.
+    const osmBuildings = viewer.scene.primitives.add(Cesium.createOsmBuildings());
+    // Fly the camera to San Francisco using longitude, latitude, and height.
+    viewer.camera.flyTo({
+      // 24.180244°N 121.310877°E   // 屏風山新登山口
+      destination: Cesium.Cartesian3.fromDegrees(121.310877, 24.180244, 4000)
+    });
+
+  </script>
+</body>
+
+</html>
