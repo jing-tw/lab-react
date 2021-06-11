@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean": "(rm -fr node_modules; rm -fr build; find . -name \"*.js\" -type f|xargs rm -f; find . -name \"*.map\" -type f|xargs rm -f) && (cd server && yarn clean)"
+    "clean": "(rm -fr node_modules; rm -fr build; find . -name \"*.js\" -type f|xargs rm -f; find . -name \"*.map\" -type f|xargs rm -f)"
   },
   "eslintConfig": {
     "extends": [
