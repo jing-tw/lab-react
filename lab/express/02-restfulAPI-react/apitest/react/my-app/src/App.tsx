@@ -7,7 +7,10 @@ import { createCallChain } from 'typescript';
 
 
 function App() {
-  const url = 'http://localhost:9000/statusAPI';
+  // const url = 'http://localhost:9000/statusAPI';  // pass
+  // const url = 'http://127.0.0.1:9000/statusAPI';  // cors
+  // const url = 'http://www.google.com'             // cors 
+  const url = 'http://192.168.21.14:9000/statusAPI'; // cors
   const [myMap, setMyMap] = useState(new Map());
   const updateMap = (k:string,v:any) => {
     setMyMap(new Map(myMap.set(k,v)));
@@ -15,7 +18,7 @@ function App() {
 
 
   const onClickedTestNeedle = () => {
-    initStatus('btTestNeedle.Title', 'btTestNeedle testing');
+    updateTitle('btTestNeedle.Title', 'btTestNeedle testing');
 
     var needle = require('needle');
     needle.get(url, function(error:any, response:any) {
@@ -26,7 +29,7 @@ function App() {
 
   const onClickedTestFetch = async () => {
     console.log('onClickedTestFetch')
-    initStatus('btTestFetch.Title', 'btTestFetch testing');
+    updateTitle('btTestFetch.Title', 'btTestFetch testing');
 
     let response = await fetch(url);
     if (response.ok) { // if HTTP-status is 200-299
@@ -37,7 +40,7 @@ function App() {
     }
   }
 
-  function initStatus(strKeyTitle:string, strValueTitle:string):void{
+  function updateTitle(strKeyTitle:string, strValueTitle:string):void{
     updateMap(strKeyTitle, strValueTitle);
     setTimeout(() => {
         updateMap(strKeyTitle, 'Success');

@@ -2,6 +2,7 @@
 ## Step 1: start server
 ```bash
 cd server
+yarn install
 tsc
 node index.js
 ```
