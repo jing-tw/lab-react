@@ -1,3 +1,3 @@
 #!/bin/bash
-yarn --cwd ./server-view clean
+yarn --cwd ./client clean
 yarn --cwd ./server clean

@@ -21,7 +21,7 @@ const app = express();
 // handle cors
 // app.use(cors());
 // Register a middleware to serve files from the React production build folder: ../build
-app.use(express.static(path.join(__dirname, '../server-view/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 app.use('/statusAPI', statusAPIRouter);
 
 // Register a middleware to handle GET request on the '/' to response the the React production index.html
