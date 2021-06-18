@@ -21,7 +21,7 @@ const app = express();
 // handle cors
 // app.use(cors());
 // Register a middleware to serve files from the React production build folder: ../build
-app.use(express.static(path.join(__dirname, '../app/build')));
+app.use(express.static(path.join(__dirname, '../server-view/build')));
 app.use('/statusAPI', statusAPIRouter);
 
 // Register a middleware to handle GET request on the '/' to response the the React production index.html
@@ -31,4 +31,5 @@ app.get('/', function (req, res) {
 
 app.listen(9000);
 console.log('Server: ok')
-console.log('Test: gio open http://192.168.21.14:9000/statusAPI')
+console.log('Test home: gio open http://localhost:9000/')
+console.log('Test API: gio open http://localhost:9000/statusAPI')

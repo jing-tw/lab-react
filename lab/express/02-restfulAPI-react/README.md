@@ -12,8 +12,8 @@
 ### Install
 ```bash
 yarn --cwd ./server install
-yarn --cwd ./app install
-yarn --cwd ./app build
+yarn --cwd ./server-view install
+yarn --cwd ./server-view build
 yarn --cwd ./apitest/react install
 ```
 
