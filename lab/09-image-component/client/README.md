@@ -1,4 +1,5 @@
-# Demo for creating a new React Component
+# Brief
+This example shows you how to add an image static asset to a Reatc component.
 ## Install
 ```bash
 yarn install
