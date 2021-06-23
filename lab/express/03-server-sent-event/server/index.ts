@@ -4,6 +4,7 @@ import path from 'path';
 var statusAPIRouter = require('./routes/statusAPI');
 // var cors = require("cors");
 
+const ReactBuildPath:string = '../client/build';
 const app = express();
 
 // var bodyParser = require('body-parser')
@@ -21,12 +22,14 @@ const app = express();
 // handle cors
 // app.use(cors());
 // Register a middleware to serve files from the React production build folder: ../build
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, ReactBuildPath)));
+
+// Register a router statusAPIRouter on the virtual path /statusAPI. 
 app.use('/statusAPI', statusAPIRouter);
 
-// Register a middleware to handle GET request on the '/' to response the the React production index.html
+// Register a middleware that handle GET request on the '/' to response React production index.html
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../app/build/index.html'));
+  res.sendFile(path.join(__dirname, ReactBuildPath + '/index.html'));
 });
 
 app.listen(9000);
