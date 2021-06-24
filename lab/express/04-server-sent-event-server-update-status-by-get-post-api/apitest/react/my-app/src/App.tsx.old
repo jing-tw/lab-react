@@ -1,0 +1,79 @@
+import React,  { useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Button from '@material-ui/core/Button';
+import { createCallChain } from 'typescript';
+
+
+
+function App() {
+  const url = 'http://localhost:9000/statusAPI';
+  // const state = {
+  //   users: [],
+  // };
+
+  // const [state, setState] = useState('Test: needle');
+  // const [todos, setState] = useState([{ text: 'Test: needle'}]);
+  // const [myMap, setMyMap] = useState(new Map());
+  const [myMap, setMyMap] = useState(new Map());
+  const updateMap = (k:string,v:any) => {
+    setMyMap(new Map(myMap.set(k,v)));
+  }
+
+  // updateMap('btTestNeedle.Title', 'btTestNeedle');
+
+  const onClickedTestNeedle = () => {
+    initStatus();
+
+    var needle = require('needle');
+    needle.get(url, function(error:any, response:any) {
+    if (!error && response.statusCode == 200)
+        console.log('error');
+        console.log(response.body);
+    });
+  }
+
+  const onClickedTestFetch = () => {
+    fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data));
+  }
+
+  function initStatus():void{
+    // setState('testing');
+    // setState({ users: 'testing' });
+    updateMap('btTestNeedle.Title', 'testing');
+    setTimeout(() => {
+        // setState('success');
+        updateMap('btTestNeedle.Title', 'Success');
+
+    }, 2000);
+  }
+
+  function getValue(map:any, key:string, strDefult:string) {
+    return map.get(key) || strDefult;
+  }
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>
+        {/* <Button onClick={onClickedTestNeedle} variant="contained" color="primary"> {state}</Button> */}
+        {/* <Button onClick={onClickedTestFetch} variant="contained" color="primary"> {state}</Button> */}
+        {/* {[...myMap.keys()].map(k => (
+          <Button onClick={onClickedTestNeedle} variant="contained" color="primary"> myMap.get(k) </Button>
+        ))} */}
+        {/* <ul>
+      {[...myMap.keys()].map(k => (
+        <li key={k}>myMap.get(k)</li>
+      ))}
+    </ul> */}
+
+        <Button onClick={onClickedTestNeedle} variant="contained" color="primary"> {getValue(myMap, 'btTestNeedle.Title', 'btTestNeedle123')}</Button>
+        </p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
