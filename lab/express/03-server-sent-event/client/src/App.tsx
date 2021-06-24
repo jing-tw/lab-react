@@ -17,12 +17,12 @@ function App() {
       const strNum:string = JSON.parse(event.data).num;
       let num:number = parseInt(strNum);
       console.log('num = ' + num);
-      (myimage.current as MyImage).changeLight(num%2);
+      (myimage.current as MyImage).changeLight(num%3);
 
       /* By default, if the connection between the client and server closes, the connection is restarted. The connection is terminated with the .close() method.
       ref. https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
       */
-      if (num == 5){
+      if (num == 20){
         console.log('[Early Stop] entSource.close')
         evtSource.close();
       }
