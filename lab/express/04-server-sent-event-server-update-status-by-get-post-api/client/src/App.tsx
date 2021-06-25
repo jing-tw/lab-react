@@ -4,14 +4,16 @@ import Button from '@material-ui/core/Button';
 import MyImage from './component/my-image';
 
 function App() {
+  const urlStartMontorApi:string = 'status-realtime/start-monitor';
+  const urlIncreaseApi:string = 'status-realtime/increase';
+
   // Create the Ref to your component
   let myimage = React.createRef<MyImage>();
   let cnt:number = 0;
   
   const onStartMonitor = async () => {
     console.log('[client] onStartMonitor')
-    const url = 'status-realtime/start-monitor'; 
-    const evtSource = new EventSource(url);
+    const evtSource =new EventSource(urlStartMontorApi)
 
     // On status changed from server
     evtSource.onmessage = function(event) {
@@ -27,12 +29,11 @@ function App() {
     }
   }
 
-  const onUpdate = async () => {
+  const onIncreaseNum = async () => {
     cnt++;
     console.log('[client] onUpdate, ' + cnt);
-    const url = 'status-realtime/increase';
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
+    xhr.open('GET', urlIncreaseApi);
     xhr.send();
     xhr.onload = function() {
       if (xhr.status != 200) { // HTTP error?
@@ -50,8 +51,6 @@ function App() {
     xhr.onerror = function() {
       console.log('[client] handle non-HTTP error (e.g. network down)');
     };
-
-
   }
 
   return (
@@ -60,7 +59,7 @@ function App() {
         <p>
           <MyImage ref = {myimage} /> 
           <Button onClick={onStartMonitor} variant="contained" color="primary"> Start Monitor </Button>
-          <Button onClick={onUpdate} variant="contained" color="secondary"> Update Status </Button>
+          <Button onClick={onIncreaseNum} variant="contained" color="secondary"> Update Status </Button>
         </p>
       </header>
     </div>
