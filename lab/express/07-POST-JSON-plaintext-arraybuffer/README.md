@@ -1,4 +1,4 @@
-# Test update status using GET method with React client + Express Server
+# An example for POST json, text/plan, arraybuffer using React, Express, Ajv as a demo
 ## Script Version
 ### Install
 ```bash

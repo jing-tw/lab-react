@@ -1,4 +1,4 @@
-# Test update status using GET method with React client + Express Server
+# An example for POST json to server
 ## Script Version
 ### Install
 ```bash
