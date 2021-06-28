@@ -10,14 +10,10 @@ let status:Status = {num: 0, msg: 'init'};
 var router = express.Router();
 var bodyParser  = require('body-parser');
 
-// 
-// In the express project, the parser provided by the body-parser is usually called in order, so that when a parser cannot satisfy the post parameter parsing condition, it can also be parsed by another parser (in some special requests, it is possible that all parser are Unable to parse).
-// ref.
-// https://www.programmersought.com/article/14781326503/
 router.use(bodyParser.text()); // for parsing req.body with text/plain
 router.use(bodyParser.raw({type: "application/octet-stream"})); // for parsing req.body with application/octet-stream
 // router.use(bodyParser.raw()); // ok
-router.use(bodyParser.json({type: 'application/json'})); // for parsing req.body with text/plain ok, application/json
+// router.use(bodyParser.json({type: 'application/json'})); // for parsing req.body with text/plain ok, application/json
 //router.use(bodyParser.json()); // ok, xhr.setRequestHeader('Content-Type', 'application/json'); 
 
 // api: data/status_json
