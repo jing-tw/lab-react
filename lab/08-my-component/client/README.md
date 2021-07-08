@@ -1,4 +1,4 @@
-# Demo for creating a new React Component
+# An example to create a React Component
 ## Install
 ```bash
 yarn install

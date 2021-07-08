@@ -18,9 +18,7 @@ class MyComponent extends React.Component {
     // View
     render() {
       return (
-        <div>
-          <h2>MyComponent component mode = {this.state.mode}.</h2>
-        </div>
+          <p>Child: cnt = {this.state.mode}.</p>
       );
     }
 }
