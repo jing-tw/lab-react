@@ -3,7 +3,6 @@ import './App.css';
 import Button from '@material-ui/core/Button';
 import MyComp from './component/my-comp';
 
-let mode:number = 0;
 function App() {
   const [state, setState] = useState({cnt:0, msg:'init'});
   let child = React.createRef<MyComp>();
@@ -11,7 +10,7 @@ function App() {
    const OnClicked = async () => {
     console.log('OnClicked');
     setState({...state, cnt: state.cnt + 1, msg:'cnt = ' + state.cnt}); // update current state
-    (child.current as MyComp).changeMyComponent(mode++); // update child comp.
+    (child.current as MyComp).changeMyComponent(state.cnt); // update child comp.
   }
   
   return (
