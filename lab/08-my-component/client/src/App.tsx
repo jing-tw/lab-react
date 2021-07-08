@@ -5,19 +5,19 @@ import MyComp from './component/my-comp';
 
 function App() {
   const [state, setState] = useState({cnt:0, msg:'init'});
-  let child = React.createRef<MyComp>();
+  let refChild = React.createRef<MyComp>();
 
    const OnClicked = async () => {
     console.log('OnClicked');
     setState({...state, cnt: state.cnt + 1, msg:'cnt = ' + state.cnt}); // update current state
-    (child.current as MyComp).changeMyComponent(state.cnt); // update child comp.
+    (refChild.current as MyComp).changeMyComponent(state.cnt); // update child comp.
   }
   
   return (
     <div className="App">
       <header className="App-header">
           <div> Parent: {state.msg}</div>
-          <div> <MyComp ref = {child} /> </div>
+          <div> <MyComp ref = {refChild} /> </div>
           <Button onClick={OnClicked} variant="contained" color="primary">Click</Button>
       </header>
     </div>
