@@ -10,7 +10,7 @@ function App() {
    const OnClicked = async () => {
     console.log('OnClicked');
     setState({...state, cnt: state.cnt + 1, msg:'cnt = ' + state.cnt}); // update current state
-    (refChild.current as MyComp).changeMyComponent(state.cnt); // update child comp.
+    (refChild.current as MyComp).updateMe(state.cnt); // update child comp.
   }
   
   return (

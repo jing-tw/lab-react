@@ -5,20 +5,18 @@ import React from 'react';
 class MyComponent extends React.Component {
     // Declare the class property for keep the component state
     state = {
-      mode: 0,
+      myId: 0,
     }
 
     // Declare a method for update the compoent state 
-    public changeMyComponent = (intMode:number) => {
-      this.setState({
-          mode: intMode
-      });
+    public updateMe = (_cnt:number) => {
+      this.setState({...this.state, myId: _cnt});
     };
 
     // View
     render() {
       return (
-          <p>Child: cnt = {this.state.mode}.</p>
+          <p>Child: cnt = {this.state.myId}.</p>
       );
     }
 }
