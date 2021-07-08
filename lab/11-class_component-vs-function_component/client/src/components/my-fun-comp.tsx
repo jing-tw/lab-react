@@ -4,8 +4,8 @@ import redlight from './res/redlight-v3.png'
 import greenlight from './res/greenlight-v3.png'
 import yellowlight from './res/yellowlight-v3.png'
 
-function MyImage2(props:{id:number}): JSX.Element {
-  console.log('MyImage2::' + JSON.stringify(props));
+function MyFunComp(props:{id:number}): JSX.Element {
+  console.log('MyFunComp:' + JSON.stringify(props));
 
   let imgSrc:string;
   switch(props.id){
@@ -21,7 +21,7 @@ function MyImage2(props:{id:number}): JSX.Element {
 
   return(<div><img src={imgSrc} ></img></div>);
 }
-export default MyImage2;
+export default MyFunComp;
 
 
 

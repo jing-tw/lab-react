@@ -3,7 +3,7 @@ import React from 'react';
 import redlight from './res/redlight-v3.png'
 import greenlight from './res/greenlight-v3.png'
 import yellowlight from './res/yellowlight-v3.png'
-class MyImage extends React.Component {
+class MyClassComp extends React.Component {
     RED_LIGHT = {id:0, strName:'red light', imgSrc: redlight};
     GREEN_LIGHT = {id:1, strName:'green light', imgSrc: greenlight};
     Yellow_LIGHT = {id:1, strName:'yellow light', imgSrc: yellowlight};
@@ -24,7 +24,7 @@ class MyImage extends React.Component {
           this.setState({data : this.Yellow_LIGHT});
           break;
         default:
-          alert('Invalid _id, changeLight, MyImage. _id = . Act: use Red Light as default' + _id);
+          alert('Invalid _id, changeLight, MyClassComp. _id = . Act: use Red Light as default' + _id);
           this.setState({data : this.RED_LIGHT});
       }
     };
@@ -38,7 +38,7 @@ class MyImage extends React.Component {
     }
 }
 
-export default MyImage;
+export default MyClassComp;
 
 
 
