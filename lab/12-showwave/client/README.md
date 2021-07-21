@@ -1,4 +1,4 @@
-# Demo for creating a new React Component and switch the images
+# A Demo for creating a React function component to show time serial data
 # Install
 ```bash
 yarn install
@@ -11,4 +11,4 @@ yarn start
 ```
 
 # Detail
-1. https://docs.google.com/document/d/1g-LbByWf_hnJwnc-OL1tLu0H9_Jy3V4t-50lEcPCx7A/edit?usp=sharing
+1. https://docs.google.com/document/d/1eXtn9UeOGQOVmxkhqAbu5hc4FZmauhBSgYR3PdKHHhU/edit?usp=sharing
