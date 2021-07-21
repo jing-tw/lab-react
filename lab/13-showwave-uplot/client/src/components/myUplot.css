@@ -1,0 +1,5 @@
+.center {
+    margin: auto; /* To horizontally center a block element, use margin:auto*/
+    background: rgb(202, 236, 195);
+    width: 400px;
+  }
