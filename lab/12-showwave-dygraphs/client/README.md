@@ -1,4 +1,4 @@
-# A Demo for creating a React function component to show time serial data
+# Show a live updated time-serial data using dygraphs in React function component
 # Install
 ```bash
 yarn install
