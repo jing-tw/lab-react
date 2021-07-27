@@ -1,27 +1,33 @@
-// The current Redux application state
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice'; // import the counter logic for "state.counter"
+import counterReducer from '../features/counter/counterSlice'; 
 
-// Create the store for the app
+// (1) Create the store for app states and the reducers that handle the update logic
 export const store = configureStore({
-  // Define the root reducer for the application store
+  // (2) The root reducer
   reducer: {
-    // (1) We want to have a "state.counter" section of the Redux state object
-    // (2) We want the counterReducer function to be in charge of deciding if and how to update the state.counter section whenever an action is dispached
     counter: counterReducer,
-    // (3) If there is another "state.xxx" section would like to add to the state object
+    // (key) counter: we want to have a "state.counter" section of the Redux state object
+    // (reducer) counterReducer: we want the counterReducer function to be in charge of deciding if and how to update the state.counter section whenever an action is dispached
+
+    // (3) Other features
     // xxx: xxxReducer,
   },
 });
 
-// (4) The store.dispath function is the noly way to update the state, here, the inferred the dispatch type as {counter: CounterState, xxx:XxxState} 
+// (4) Define the AppDispatch for action routing and trigger the component state update
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>; // (5) export the RootState type
 
-// (6) Handle the async activity
-//     Definition of a type named AppThunk
-//     1. a function type
-//     2. that can be dispatched to perform async activity and can dispatch actions and read state
+// (5) Define the RootState that unified state of components
+//     Depends
+//     Code: the state selector in components
+//     File: Component slice source(xxxSlice.ts)
+export type RootState = ReturnType<typeof store.getState>; 
+
+// (6) Define a helper AppThunk for creating thunk object to handle the
+//     "async" activity logic and the dispatch
+//     Depends
+//     Code: the thunk object that Async update state logic (version: manual) 
+//     File: Component slice source(xxxSlice.ts)
 // Ref
 //     1. https://bloggie.io/@_ChristineOo/understanding-typings-of-redux-thunk-action
 //     2. https://github.com/reduxjs/redux-thunk#why-do-i-need-this

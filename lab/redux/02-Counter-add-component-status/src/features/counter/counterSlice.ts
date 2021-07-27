@@ -2,13 +2,13 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
 import { fetchCount } from './counterAPI';
 
-// (1) Define the component state type
+// (1) Define the state type where your the component included
 export interface CounterState {
-  value: number;
-  status: 'idle' | 'loading' | 'failed';
+  value: number;            // (1) value: number
+  status: 'idle' | 'loading' | 'failed'; // (2) status: 'idle' | 'loading' | 'failed'
 }
 
-// (2) Set the initial value
+// (2) The state initial value
 const initialState: CounterState = {
   value: 0,
   status: 'idle',
