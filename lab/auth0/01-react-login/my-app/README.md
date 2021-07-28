@@ -1,4 +1,4 @@
-# An example of React + Auth0 login
+# An example of React + Auth0 login app
 
 ## Install & Run
 ```bash
