@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from "@auth0/auth0-react";
-import config from './config/config'
+
+const domain = process.env.REACT_APP_AUTH0_DOMAIN as string;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID as string;
 
 ReactDOM.render(
   <Auth0Provider
-    domain = {config.auth.domain}
-    clientId = {config.auth.clientId}
+    domain = {domain}
+    clientId = {clientId}
     redirectUri={window.location.origin}
   >
     <React.StrictMode>
