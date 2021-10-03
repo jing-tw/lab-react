@@ -21,6 +21,6 @@ rm -fr ./ios/Pods
 https://docs.google.com/document/d/1U-Lw6jyTEeVv6_v2dBi51wepVAWAQI2ve5f1yVIwUUs/edit?usp=sharing
 
 # References
-https://github.com/expo/expo/tree/master/packages/expo-av
-https://medium.com/front-end-weekly/how-to-play-video-with-react-native-and-expo-30523bfcb311
-https://github.com/expo/playlist-example
+1. https://github.com/expo/expo/tree/master/packages/expo-av
+2. https://medium.com/front-end-weekly/how-to-play-video-with-react-native-and-expo-30523bfcb311
+3. https://github.com/expo/playlist-example
