@@ -9,16 +9,15 @@ import firebase from 'firebase'
 // import { getDatabase, ref, set, onValue } from 'firebase/database';
 
 // Initialize Firebase
-// Check the Project Filebase or 
-// here: 
+// Check the Project Filebase or here, https://docs.google.com/presentation/d/1xFKF3AHkZ_5ugXC1FHWlwY77T6fwvE61WDRTumbiDtQ/edit?usp=sharing
 const firebaseConfig = {
-  apiKey: "AIzaSyCe41jTg0M-QEWEoGLkMaOCT0mQFXe8neY",
-  authDomain: "my-filebase-project.firebaseapp.com",
-  databaseURL: "https://my-filebase-project-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "my-filebase-project",
-  storageBucket: "my-filebase-project.appspot.com",
-  messagingSenderId: "236920940780",
-  appId: "1:236920940780:web:16f1a1ecdcf0f354091dc9"
+  apiKey: "xxxx",
+  authDomain: "xxx",
+  databaseURL: "xxx",
+  projectId: "xxx",
+  storageBucket: "xxx",
+  messagingSenderId: "xxx",
+  appId: "xxx"
 };
 
 
